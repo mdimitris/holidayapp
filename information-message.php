@@ -15,11 +15,6 @@ unset($_SESSION['edit']);
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="./assets/plugins/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="./assets/plugins/daterangepicker/daterangepicker.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="./assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="./assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="./assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="./assets/dist/css/adminlte.min.css">
 </head>
@@ -27,13 +22,7 @@ unset($_SESSION['edit']);
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
 
-
-
     <?php include 'sidebar.php' ?>
-
-
-
-
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -66,39 +55,29 @@ unset($_SESSION['edit']);
 
                     </div>
                     <div class="col-md-2 ml-auto">
-                      <a href="user-form.php" class="btn btn-block btn-primary">Add User</a>
+
                     </div>
                   </div>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                   <?php
-                  if (isset($_SESSION['import_success'])) {
-                    if ($_SESSION['import_success'] == 1) { ?>
+                  if (isset($_SESSION['mail-sent'])) {
+                    if ($_SESSION['mail-sent'] == true) { ?>
 
                       <div class="alert alert-success alert-dismissible">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        <h5><i class="icon fas fa-check"></i> Successful Submission!</h5>
-                        Holiday period added successfully.
+                        <h5><i class="icon fas fa-check"></i>Message sent successfully!</h5>
+                        The information email has been sent to the employee.
                       </div>
-
-                  <?php $_SESSION['import_success'] = 0;
-                    }
+                    <?php } else { ?>
+                      <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+                        Message could not be sent successfully to the user
+                      </div>
+                  <?php }
                   } ?>
-
-                  <table id="users" class="table table-bordered table-striped">
-
-                    <thead>
-                      <tr>
-                        <th>Edit</th>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>E-mail</th>
-                        <th>User type</th>
-                      </tr>
-                    </thead>
-
-                  </table>
 
                 </div>
                 <!-- /.card-body -->
@@ -122,19 +101,6 @@ unset($_SESSION['edit']);
   <script src="./assets/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="./assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- DataTables  & Plugins -->
-  <script src="./assets/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="./assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="./assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="./assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-  <script src="./assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="./assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-  <script src="./assets/plugins/jszip/jszip.min.js"></script>
-  <script src="./assets/plugins/pdfmake/pdfmake.min.js"></script>
-  <script src="./assets/plugins/pdfmake/vfs_fonts.js"></script>
-  <script src="./assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-  <script src="./assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-  <script src="./assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
   <!-- AdminLTE App -->
   <script src="./assets/dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->

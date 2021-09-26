@@ -1,7 +1,7 @@
 <?php
 
 include_once  'config.php';
-require_once 'app/classes/user.php';
+require_once 'mail-functions.php';
 
 if (isset($_POST['employeeSubm'])) {
 
@@ -20,6 +20,7 @@ function userApplication($pdo) {
 
     $date_from = date_format(date_create_from_format('d/m/Y', $_POST['date_from']), 'Y-m-d'); 
     $date_to = date_format(date_create_from_format('d/m/Y', $_POST['date_to']), 'Y-m-d');
+    $current_date = date("l jS \of F Y h:i:s A");
     $reason = $_POST['comments'];
     $user_id = $_SESSION['user']['user_id'];
     $userData = $_SESSION['user'];
@@ -35,8 +36,10 @@ $stmt->execute([
     ':user_data_id' => $user_id
 ]);
 
-sendMailToAdmin($userData,$date_from_init,$date_to_init);
+$inserted_id = $pdo->lastInsertId();
 
+sendMailToAdmin($userData,$date_from_init,$date_to_init,$reason,$inserted_id,$current_date);
+exit;
 $_SESSION['import_success']=1;
 header("Location: dashboard.php");
 
@@ -69,7 +72,7 @@ function listApplications($pdo) {
 	
 	if ($stmt->rowCount() > 0) {
 
-/* Fetch all of the remaining rows in the result set */
+
 
 $result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 $z = json_encode($result);
@@ -80,5 +83,3 @@ return $z;
 }
 
 }
-
-?>

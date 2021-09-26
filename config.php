@@ -12,9 +12,7 @@ try {
 
 	if ($pdo) {
 		session_start();
-		
 	}
 } catch (PDOException $e) {
 	echo $e->getMessage();
 }
-

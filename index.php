@@ -22,14 +22,14 @@ echo '
 require 'config.php';
 
 
-if(!empty($_SESSION["user"])) {
+if (!empty($_SESSION["user"])) {
 
   session_start();
 
-    header("Location: dashboard.php");
+  header("Location: dashboard.php");
 } else {
-    echo '<body class="hold-transition login-page">';
-    require_once './views/login.php';
+  echo '<body class="hold-transition login-page">';
+  require_once './views/login.php';
 }
 
 ?>
@@ -41,4 +41,5 @@ if(!empty($_SESSION["user"])) {
 <!-- AdminLTE App -->
 <script src="./assets/dist/js/adminlte.min.js"></script>
 </body>
+
 </html>

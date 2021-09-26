@@ -61,7 +61,7 @@ include_once  'config.php';
             <div class="col-md-6">
               <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">Date picker</h3>
+                  <h3 class="card-title">Add Holiday Period</h3>
                 </div>
                 <div class="card-body">
                   <!-- Date -->
@@ -97,8 +97,6 @@ include_once  'config.php';
                   </form>
                 </div>
                 <div class="card-footer">
-                  Visit <a href="https://getdatepicker.com/5-4/">tempusdominus </a> for more examples and information about
-                  the plugin.
                 </div>
                 <!-- /.card-body -->
               </div>
