@@ -66,7 +66,7 @@ include_once  'config.php';
                       <h3 class="card-title">DataTable with default features</h3>
                     </div>
                     <div class="col-md-2 ml-auto">
-                      <a href="holiday-form.php" class="btn btn-block btn-primary">Primary</a>
+                      <a href="holiday-form.php" class="btn btn-block btn-primary">Add Holiday</a>
                     </div>
                   </div>
                 </div>
@@ -111,12 +111,7 @@ include_once  'config.php';
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    <footer class="main-footer">
-      <div class="float-right d-none d-sm-block">
-        <b>Version</b> 3.1.0
-      </div>
-      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-    </footer>
+    <?php include_once('footer.php'); ?>
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
