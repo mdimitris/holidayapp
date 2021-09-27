@@ -112,9 +112,9 @@ function listUsers($pdo)
 
 		$result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 		$z = json_encode($result);
-		return $z;
+		echo $z;
 	} else {
-		return '[]';
+		echo '[]';
 	}
 }
 
