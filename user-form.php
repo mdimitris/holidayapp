@@ -67,7 +67,7 @@ include_once  'config.php';
                 </div>
                 <div class="card-body">
                   <!-- Date -->
-                  <form action='user-functions.php' method='post'>
+                  <form action='user-functions.php' id="userForm" method='post'>
 
                     <div class="form-group">
                       <label for="firstname">Firstname</label>
@@ -145,6 +145,9 @@ include_once  'config.php';
   <script src="./assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
   <!-- AdminLTE App -->
   <script src="./assets/dist/js/adminlte.min.js"></script>
+  <!-- jquery-validation -->
+<script src="./assets/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="./assets/plugins/jquery-validation/additional-methods.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="./assets/dist/js/application.js"></script>
   <script src="./assets/dist/js/user-form.js"></script>
